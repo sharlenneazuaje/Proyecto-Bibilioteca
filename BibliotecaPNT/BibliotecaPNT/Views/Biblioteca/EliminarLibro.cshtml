@@ -1,0 +1,10 @@
+﻿@model Libro
+
+<h2>Eliminar Libro</h2>
+
+<p>¿Estás seguro de que deseas eliminar el libro <strong>@Model.titulo</strong>?</p>
+
+<form asp-action="Eliminar" asp-route-id="@Model.ID" method="post">
+    <input type="submit" value="Eliminar" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

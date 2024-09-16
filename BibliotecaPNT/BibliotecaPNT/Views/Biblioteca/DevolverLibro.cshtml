@@ -1,0 +1,22 @@
+﻿@model Libro
+
+<h2>Devolver libro</h2>
+
+<form asp-action="DevolverLibro" method="post">
+    <input type="hidden" id="ID" name="ID" value="@Model.ID" />
+
+    <div class="form-group">
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" class="form-control" value="@Model.titulo" readonly />
+    </div>
+
+    <div class="form-group">
+        <label for="prestatario">Prestatario</label>
+        <input type="text" id="prestatario" name="prestatario" class="form-control" value="@Model.prestatario" readonly />
+    </div>
+
+    <br />
+    <p>¿Está seguro de que desea devolver este libro?</p>
+    <button type="submit" class="btn btn-success">Confirmar devolución</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

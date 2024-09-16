@@ -1,0 +1,26 @@
+﻿@model Libro
+
+<h2>Prestar libro</h2>
+
+<form asp-action="PedirPrestado" method="post">
+    <input type="hidden" id="ID" name="ID" value="@Model.ID" />
+    <input type="hidden" id="autor" name="autor" value="@Model.autor" />
+    <input type="hidden" id="año" name="año" value="@Model.año" />
+    <input type="hidden" id="editorial" name="editorial" value="@Model.editorial" />
+    <input type="hidden" id="genero" name="genero" value="@Model.genero" />
+    <input type="hidden" id="prestado" name="prestado" value="true" />
+
+    <div class="form-group">
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" class="form-control" value="@Model.titulo" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Nombre del prestatario</label>
+        <input type="text" asp-for="prestatario" id="prestatario" name="prestatario" class="form-control" required/>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-success">Prestar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
